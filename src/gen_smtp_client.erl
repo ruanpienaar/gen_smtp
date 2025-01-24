@@ -619,7 +619,7 @@ try_AUTH(Socket, Options, AuthTypes) ->
 
 to_string(String) when is_list(String) -> String;
 to_string(Binary) when is_binary(Binary) -> binary_to_list(Binary);
-to_string({_, _, _, _} = Ipv4) -> inet:parse_address(Ipv4).
+to_string({_, _, _, _} = Ipv4) -> inet:ntoa(Ipv4).
 
 to_binary(String) when is_binary(String) -> String;
 to_binary(String) when is_list(String) -> list_to_binary(String).
